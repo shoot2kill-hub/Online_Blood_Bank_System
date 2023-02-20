@@ -1,16 +1,16 @@
 import requests
 
-email_user = ''
-password_user = ''
+email_user = 'guystephane78@gmail.com'
+password_user = 'Stephane2023@23'
 
 
 def send_sms(message, phone_number):
     data = {
         'recipients': f'{phone_number}',
         'message': f'{message}',
-        'sender': '+250786405263',
+        'sender': '0787313298',
     }
 
     r = requests.post('https://www.intouchsms.co.rw/api/sendsms/.json', data,
-                      auth=(f'{email_user}', f'{password_user}'), verify=False)
-    # print(r.json(), r.status_code)
+                      auth=(f'guystephane78@gmail.com', f'Stephane2023@23'))
+    print(r.json(), r.status_code)
