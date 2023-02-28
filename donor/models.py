@@ -6,7 +6,7 @@ class Donor(models.Model):
     profile_pic= models.ImageField(upload_to='profile_pic/Donor/',null=True,blank=True)
 
     
-    bloodgroup=models.CharField(max_length=10)
+    email=models.CharField(max_length=40)
     
 
     address = models.CharField(max_length=40)

@@ -78,23 +78,10 @@
 
 
                         <div class="form-row">
-                            <div class="name">Blood Group</div>
+                            <div class="name">email Address</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <div class="rs-select2 js-select-simple select--no-search">
-                                        <select name="bloodgroup" class="form-control">
-                                            <option disabled="disabled" selected="selected">Please Select</option>
-                                            <option>O+</option>
-                                            <option>O-</option>
-                                            <option>A+</option>
-                                            <option>A-</option>
-                                            <option>B+</option>
-                                            <option>B-</option>
-                                            <option>AB+</option>
-                                            <option>AB-</option>
-                                        </select>
-                                        <div class="select-dropdown"></div>
-                                    </div>
+                                    {% render_field donorForm.email|attr:'required:true'  class="input--style-5"  %}
                                 </div>
                             </div>
                         </div>

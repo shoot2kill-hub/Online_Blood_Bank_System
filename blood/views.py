@@ -181,7 +181,7 @@ def update_donor_view(request, pk):
             user.save()
             donor = donorForm.save(commit=False)
             donor.user = user
-            donor.bloodgroup = donorForm.cleaned_data['bloodgroup']
+            donor.email = donorForm.cleaned_data['email']
             donor.save()
             return redirect('admin-donor')
     return render(request, 'blood/update_donor.html', context=mydict)

@@ -95,7 +95,7 @@ background-color: darken($baseColor, 5%);
         <thead>
         <tr>
             <th>Name</th>
-            <th>Blood Group</th>
+            <th>E-mail Address</th>
             <th>Address</th>
             <th>Contact</th>
 
@@ -106,7 +106,7 @@ background-color: darken($baseColor, 5%);
             {% for t in request_report %}
                 <tr>
                 <td> {{t.get_name}}</td>
-                <td>{{t.bloodgroup}}</td>
+                <td>{{t.email}}</td>
                 <td>{{t.address}}</td>
                 <td>{{t.mobile}}</td>
             </tr>

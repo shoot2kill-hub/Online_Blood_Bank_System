@@ -24,7 +24,7 @@ def donor_signup_view(request):
             user.save()
             donor=donorForm.save(commit=False)
             donor.user=user
-            donor.bloodgroup=donorForm.cleaned_data['bloodgroup']
+            donor.email=donorForm.cleaned_data['email']
             donor.save()
             my_donor_group = Group.objects.get_or_create(name='DONOR')
             my_donor_group[0].user_set.add(user)
