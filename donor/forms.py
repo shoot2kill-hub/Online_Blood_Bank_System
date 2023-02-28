@@ -19,4 +19,4 @@ class DonorForm(forms.ModelForm):
 class DonationForm(forms.ModelForm):
     class Meta:
         model=models.BloodDonate
-        fields=['age','bloodgroup','disease','unit']
+        fields=['pulse','temperature','bloodpressure','gender','occupation','weight','age','bloodgroup','disease','unit']

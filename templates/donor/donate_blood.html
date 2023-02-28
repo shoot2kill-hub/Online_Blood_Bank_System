@@ -22,6 +22,69 @@
                     {% csrf_token %}
 
                     <div class="form-row">
+                        <div class="name">Age</div>
+                        <div class="value">
+                            <div class="input-group">
+                                {% render_field donation_form.age|attr:'required:true'  class="input--style-5"  %}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="name">Gender</div>
+                        <div class="value">
+                            <div class="input-group">
+                                {% render_field donation_form.gender|attr:'required:true'  class="input--style-5"  %}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="name">Occupation</div>
+                        <div class="value">
+                            <div class="input-group">
+                                {% render_field donation_form.occupation|attr:'required:true'  class="input--style-5"  %}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="name">Weight</div>
+                        <div class="value">
+                            <div class="input-group">
+                                {% render_field donation_form.weight|attr:'required:true'  class="input--style-5"  %}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="name">Blood Pressure</div>
+                        <div class="value">
+                            <div class="input-group">
+                                {% render_field donation_form.bloodpressure|attr:'required:true'  class="input--style-5"  %}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="name">Pulse</div>
+                        <div class="value">
+                            <div class="input-group">
+                                {% render_field donation_form.pulse|attr:'required:true'  class="input--style-5"  %}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="name">Temperature</div>
+                        <div class="value">
+                            <div class="input-group">
+                                {% render_field donation_form.temperature|attr:'required:true'  class="input--style-5"  %}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
                         <div class="name">Blood Group</div>
                         <div class="value">
                             <div class="input-group">
@@ -61,14 +124,7 @@
                         </div>
                     </div>
 
-                    <div class="form-row">
-                        <div class="name">Age</div>
-                        <div class="value">
-                            <div class="input-group">
-                                {% render_field donation_form.age|attr:'required:true'  class="input--style-5"  %}
-                            </div>
-                        </div>
-                    </div>
+
 
                  
 

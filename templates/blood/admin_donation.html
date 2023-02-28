@@ -39,8 +39,14 @@
         <thead class="bg-dark">
             <tr>
                 <th scope="col" style="color: rgb(192, 192, 192);">Donor's Name</th>
-                <th scope="col" style="color: rgb(192, 192, 192);">Disease</th>
                 <th scope="col" style="color: rgb(192, 192, 192);">Age</th>
+                <th scope="col" style="color: rgb(192, 192, 192);">Gender</th>
+                <th scope="col" style="color: rgb(192, 192, 192);">Occupation</th>
+                <th scope="col" style="color: rgb(192, 192, 192);">Disease</th>
+                <th scope="col" style="color: rgb(192, 192, 192);">Weight</th>
+                <th scope="col" style="color: rgb(192, 192, 192);">Blood Pressure</th>
+                <th scope="col" style="color: rgb(192, 192, 192);">Pulse</th>
+                <th scope="col" style="color: rgb(192, 192, 192);">Temperature</th>
                 <th scope="col" style="color: rgb(192, 192, 192);">Blood Group</th>
                 <th scope="col" style="color: rgb(192, 192, 192);">Unit</th>
                 <th scope="col" style="color: rgb(192, 192, 192);">Request Date</th>
@@ -52,8 +58,14 @@
             {% for t in donations %}
             <tr>
                 <td> {{t.donor}}</td>
-                <td> {{t.disease}}</td>
                 <td> {{t.age}}</td>
+                <td> {{t.gender}}</td>
+                <td> {{t.occupation}}</td>
+                <td> {{t.disease}}</td>
+                <td> {{t.weight}}</td>
+                <td> {{t.bloodpressure}}</td>
+                <td> {{t.pulse}}</td>
+                <td> {{t.temperature}}</td>
                 <td>{{t.bloodgroup}}</td>
                 <td>{{t.unit}}</td>
                 <td>{{t.date}}</td>
