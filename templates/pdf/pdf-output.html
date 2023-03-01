@@ -34,7 +34,7 @@
 
 .content-table th,
 .content-table td {
-    padding: 12px 12px;
+    padding: 5px 8px;
 }
 
 .content-table tbody tr {
@@ -96,8 +96,9 @@ background-color: darken($baseColor, 5%);
         <div class="title">Blood Request History Report</div>
         <thead>
         <tr>
-            <th>Patient Name</th>
-            <th>Age</th>
+            <th>Hospital Name</th>
+            <th>Address</th>
+            <th>Contact Number</th>
             <th>Reason</th>
             <th>Blood Group</th>
             <th>Unit(ml)</th>
@@ -111,8 +112,9 @@ background-color: darken($baseColor, 5%);
     <tbody>
             {% for request_report in request_report %}
                 <tr>
-                    <td>{{ request_report.patient_name }}</td>
-                    <td>{{ request_report.patient_age }}</td>
+                    <td>{{ request_report.hospital_name }}</td>
+                    <td>{{ request_report.address }}</td>
+                    <td>{{ request_report.mobile }}</td>
                     <td>{{ request_report.reason }}</td>
                     <td>{{ request_report.bloodgroup }}</td>
                     <td>{{ request_report.unit }}</td>

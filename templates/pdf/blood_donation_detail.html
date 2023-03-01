@@ -34,7 +34,7 @@
 
 .content-table th,
 .content-table td {
-    padding: 12px 12px;
+    padding: 5px 5px;
 }
 
 .content-table tbody tr {
@@ -88,6 +88,7 @@ background-color: darken($baseColor, 5%);
 <body>
     <div class="logo-container">
         <img src="https://www.eahealth.org/sites/www.eahealth.org/files/styles/grid-3-wide-logo/public/content/organisation/logos/2018-05-23/cnts.png?itok=45p-mELJ&timestamp=1527067875" style="height: 100px;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Coat_of_arms_of_Burundi.svg/250px-Coat_of_arms_of_Burundi.svg.png" class="floatright" style="height: 100px;"  style="width: 100%;">
     </div>
 
     <table class="content-table">
@@ -95,8 +96,10 @@ background-color: darken($baseColor, 5%);
         <thead>
         <tr>
             <th>Donor's Name</th>
-            <th>Disease</th>
             <th>Age</th>
+            <th>Gender</th>
+            <th>Occupation</th>
+            <th>Disease</th>
             <th>Blood Group</th>
             <th>Unit</th>
             <th>Request Date</th>
@@ -109,8 +112,12 @@ background-color: darken($baseColor, 5%);
             {% for t in blood_donation_report %}
                 <tr>
                 <td> {{t.donor}}</td>
-                <td> {{t.disease}}</td>
                 <td> {{t.age}}</td>
+                <td> {{t.gender}}</td>
+                <td> {{t.occupation}}</td>
+                <td> {{t.disease}}</td>
+
+
                 <td>{{t.bloodgroup}}</td>
                 <td>{{t.unit}}</td>
                 <td>{{t.date}}</td>

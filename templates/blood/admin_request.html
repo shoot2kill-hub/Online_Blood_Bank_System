@@ -14,8 +14,9 @@
     <table class="table table-light table-hover table-bordered table-striped">
         <thead class="bg-dark">
             <tr>
-                <th scope="col" style="color: rgb(192, 192, 192);">Patient's Name</th>
-                <th scope="col" style="color: rgb(192, 192, 192);">Age</th>
+                <th scope="col" style="color: rgb(192, 192, 192);">Hospital Name</th>
+                <th scope="col" style="color: rgb(192, 192, 192);">Address</th>
+                <th scope="col" style="color: rgb(192, 192, 192);">Contact Number</th>
                 
                 <th scope="col" style="color: rgb(192, 192, 192);">Reason</th>
                 <th scope="col" style="color: rgb(192, 192, 192);">Blood Group</th>
@@ -28,8 +29,9 @@
         <tbody>
             {% for t in requests %}
             <tr>
-                <td> {{t.patient_name}}</td>
-                <td>{{t.patient_age}}</td>
+                <td> {{t.hospital_name}}</td>
+                <td>{{t.address}}</td>
+                <td>{{t.mobile}}</td>
                 
                 
                 <td>{{t.reason}}</td>

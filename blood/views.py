@@ -299,7 +299,7 @@ def update_approve_status_view(request, pk):
     unit = req.unit
     stock = models.Stock.objects.get(bloodgroup=bloodgroup)
     if stock.unit > unit:
-        stock.unit = stock.unit - unit
+        stock.unit = stock.unit-unit
         stock.save()
         req.status = "Approved"
 

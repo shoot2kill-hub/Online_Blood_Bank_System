@@ -14,8 +14,9 @@ class Stock(models.Model):
 class BloodRequest(models.Model):
     request_by_patient = models.ForeignKey(pmodels.Patient, null=True, on_delete=models.CASCADE)
     request_by_donor = models.ForeignKey(dmodels.Donor, null=True, on_delete=models.CASCADE)
-    patient_name = models.CharField(max_length=30)
-    patient_age = models.PositiveIntegerField()
+    hospital_name = models.CharField(max_length=30)
+    address = models.CharField(max_length=40)
+    mobile = models.CharField(max_length=20,null=False)
     reason = models.CharField(max_length=500)
     bloodgroup = models.CharField(max_length=10)
     unit = models.PositiveIntegerField(default=0)
