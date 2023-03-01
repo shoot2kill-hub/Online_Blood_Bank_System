@@ -38,19 +38,10 @@
                         {% csrf_token %}
 
                         <div class="form-row">
-                            <div class="name">First Name</div>
+                            <div class="name">Hospital Name</div>
                             <div class="value">
                                 <div class="input-group">
-                                    {% render_field userForm.first_name|attr:'required:true'  class="input--style-5"  %}
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-row">
-                            <div class="name">Last Name</div>
-                            <div class="value">
-                                <div class="input-group">
-                                    {% render_field userForm.last_name|attr:'required:true'  class="input--style-5"  %}
+                                    {% render_field patientForm.hospital_name|attr:'required:true'  class="input--style-5"  %}
                                 </div>
                             </div>
                         </div>
@@ -74,57 +65,6 @@
                         </div>
 
                         <div class="form-row">
-                            <div class="name">Age</div>
-                            <div class="value">
-                                <div class="input-group">
-                                    {% render_field patientForm.age|attr:'required:true'  class="input--style-5"  %}
-                                </div>
-                            </div>
-                        </div>
-
-
-
-                        <div class="form-row">
-                            <div class="name">Blood Group</div>
-                            <div class="value">
-                                <div class="input-group">
-                                    <div class="rs-select2 js-select-simple select--no-search">
-                                        <select name="bloodgroup" class="form-control">
-                                            <option disabled="disabled" selected="selected">Please Select</option>
-                                            <option>O+</option>
-                                            <option>O-</option>
-                                            <option>A+</option>
-                                            <option>A-</option>
-                                            <option>B+</option>
-                                            <option>B-</option>
-                                            <option>AB+</option>
-                                            <option>AB-</option>
-                                        </select>
-                                        <div class="select-dropdown"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-row">
-                            <div class="name">Disease</div>
-                            <div class="value">
-                                <div class="input-group">
-                                    {% render_field patientForm.disease|attr:'required:true'  class="input--style-5"  %}
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-row">
-                            <div class="name">Patient's Name</div>
-                            <div class="value">
-                                <div class="input-group">
-                                    {% render_field patientForm.doctorname|attr:'required:true'  class="input--style-5"  %}
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-row">
                             <div class="name">Address</div>
                             <div class="value">
                                 <div class="input-group">
@@ -142,14 +82,7 @@
                             </div>
                         </div>
 
-                        <div class="form-row">
-                            <div class="name">Photo</div>
-                            <div class="value">
-                                <div class="input-group">
-                                    {% render_field patientForm.profile_pic|attr:'required:true'  class="input--style-5"  %}
-                                </div>
-                            </div>
-                        </div>
+
 
    
   

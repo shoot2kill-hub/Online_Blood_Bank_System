@@ -4,15 +4,12 @@
 {%load static%}
 <br><br>
 <div class="container">
-    <H4 class="text-center">Doctor's Detail</H4><br>
+    <H4 class="text-center">Hospital's Detail</H4><br>
     <table class="table table-light table-hover table-bordered table-striped">
         <thead class="bg-dark">
             <tr>
-                <th scope="col" style="color: rgb(192, 192, 192);">Name</th>
-                <th scope="col" style="color: rgb(192, 192, 192);">Photo</th>
-                <th scope="col" style="color: rgb(192, 192, 192);">Blood Group</th>
-                <th scope="col" style="color: rgb(192, 192, 192);">Age</th>
-                <th scope="col" style="color: rgb(192, 192, 192);">Disease</th>
+                <th scope="col" style="color: rgb(192, 192, 192);">Hospital Name</th>
+                <th scope="col" style="color: rgb(192, 192, 192);">Address</th>
                 <th scope="col" style="color: rgb(192, 192, 192);">Contact</th>
                 <th style="color: rgb(192, 192, 192);">Action</th>
             </tr>
@@ -20,11 +17,9 @@
         <tbody>
             {% for t in patients %}
             <tr>
-                <td> {{t.get_name}}</td>
-                <td> <img src="{% static t.profile_pic.url %}" alt="Profile Pic" height="40px" width="40px" /></td>
-                <td>{{t.bloodgroup}}</td>
-                <td>{{t.age}}</td>
-                <td>{{t.disease}}</td>
+                <td> {{t.hospital_name}}</td>
+
+                <td>{{t.address}}</td>
                 <td>{{t.mobile}}</td>
                 
                 <td>

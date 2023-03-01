@@ -22,19 +22,28 @@
                     {% csrf_token %}
 
                     <div class="form-row">
-                        <div class="name">Patient Name</div>
+                        <div class="name">Hospital Name</div>
                         <div class="value">
                             <div class="input-group">
-                                {% render_field request_form.patient_name|attr:'required:true'  class="input--style-5"  %}
+                                {% render_field request_form.hospital_name|attr:'required:true'  class="input--style-5"  %}
                             </div>
                         </div>
                     </div>
 
                     <div class="form-row">
-                        <div class="name">Patient Age</div>
+                        <div class="name">Address</div>
                         <div class="value">
                             <div class="input-group">
-                                {% render_field request_form.patient_age|attr:'required:true'  class="input--style-5"  %}
+                                {% render_field request_form.address|attr:'required:true'  class="input--style-5"  %}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="name">Contact Number</div>
+                        <div class="value">
+                            <div class="input-group">
+                                {% render_field request_form.mobile|attr:'required:true'  class="input--style-5"  %}
                             </div>
                         </div>
                     </div>
