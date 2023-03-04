@@ -5,11 +5,11 @@ from django.db import models
 
 
 class Hospital_service(models.Model):
-    camp_name = models.CharField(max_length=100)
-    camp_location = models.CharField(max_length=100)
-    camp_start_time = models.TimeField()
-    camp_end_time = models.TimeField()
-    camp_phone = models.CharField(max_length=250, default='0788101020')
+    hospital_name = models.CharField(max_length=100)
+    hospital_location = models.CharField(max_length=100)
+    hospital_start_time = models.TimeField()
+    hospital_end_time = models.TimeField()
+    hospital_phone = models.CharField(max_length=250, default='0788101020')
     post_date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
