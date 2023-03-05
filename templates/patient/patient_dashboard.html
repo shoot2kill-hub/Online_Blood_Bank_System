@@ -10,7 +10,19 @@
 </head>
 <br><br>
 <div class="container">
-
+     <div class="message" style="margin: 0 auto;">
+                {% if messages %}
+                    <div class="messages">
+                        {% for message in messages %}
+                                    <div{% if message.tags %} class="alert alert-sm alert-{{ message.tags }}"{% endif %}>
+                                            {% if user.is_authenticated %}
+                                                   Welcome, {{user.username}} {{ message }}
+                                            {% endif %}
+                                    </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+    </div>
  
     <div class="row">
       <div class="col-sm-3">

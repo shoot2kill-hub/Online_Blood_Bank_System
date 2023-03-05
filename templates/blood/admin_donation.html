@@ -35,9 +35,10 @@
 <div class="container">
     <H4 class="text-center">Blood Donation Details</H4><br>
     <a href="{% url 'blood_donation_detail_report' %}" id="admin_donation_report">Report</a>
-    <table class="table table-light table-hover table-bordered table-striped" style="margin-top: 15px;">
+    <table class="table table-light table-hover table-bordered table-striped" style="margin-top: 15px;" >
         <thead class="bg-dark">
             <tr>
+                <th scope="col" style="color: rgb(192, 192, 192);">Donor's Id</th>
                 <th scope="col" style="color: rgb(192, 192, 192);">Donor's Name</th>
                 <th scope="col" style="color: rgb(192, 192, 192);">Age</th>
                 <th scope="col" style="color: rgb(192, 192, 192);">Gender</th>
@@ -50,6 +51,7 @@
                 <th scope="col" style="color: rgb(192, 192, 192);">Blood Group</th>
                 <th scope="col" style="color: rgb(192, 192, 192);">Unit</th>
                 <th scope="col" style="color: rgb(192, 192, 192);">Request Date</th>
+                <th scope="col" style="color: rgb(192, 192, 192);">Lab Result</th>
                 <th scope="col" style="color: rgb(192, 192, 192);">Status</th>
                 <th style="color: rgb(192, 192, 192);">Action</th>
             </tr>
@@ -57,6 +59,7 @@
         <tbody>
             {% for t in donations %}
             <tr>
+                <td> {{t.id}}</td>
                 <td> {{t.donor}}</td>
                 <td> {{t.age}}</td>
                 <td> {{t.gender}}</td>
@@ -69,6 +72,14 @@
                 <td>{{t.bloodgroup}}</td>
                 <td>{{t.unit}}</td>
                 <td>{{t.date}}</td>
+                {% if t.getLabResult == "approved" %}
+                    <td style="color: green; font-weight: bold;">{{ t.getLabResult }}</td>
+                {% elif  t.getLabResult  == "rejected" %}
+                    <td style="color: red; font-weight: bold;">{{ t.getLabResult }}</td>
+                {% else %}
+                <td style="color: blue; font-weight: bold;">{{ t.getLabResult }}</td>
+                {% endif %}
+
                 <td>{{t.status}}</td>
                 {% if t.status == 'Pending' %}
                 <td>

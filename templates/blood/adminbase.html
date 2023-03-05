@@ -12,6 +12,25 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.css">
     <link rel="icon" href="{% static 'image/favicon.ico' %}">
 
+<!--    start data table-->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.css">
+      <script src="{% static 'jquerry/jquery-3.6.1.min.js' %}"></script>
+
+        {#   Data table section start   #}
+              <link rel="stylesheet" type="text/css" href="{% static 'datatable/datatables.min.css' %}"/>
+
+                <script type="text/javascript" src="{% static 'datatable/datatables.min.js' %}"></script>
+      {#   Data table section end   #}
+
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+
+
+<!--    end data table-->
+
+
+
     <style>
 
 
@@ -181,12 +200,14 @@ body{
         <ul>
             <li><a style="text-decoration:none;" href="/"><i class="fas fa-home"></i>Home</a></li>
             <li><a style="text-decoration:none;" href="{% url 'admin_add_hospital' %}"><i class="fas fa-hospital"></i>Add Camp</a></li>
+            <li><a style="text-decoration:none;" href="{% url 'admin_blood_test_lab' %}"><i class="fas fa-dna"></i>Blood Tests Lab</a></li>
             <li><a style="text-decoration:none;" href="/admin-donor"><i class="fas fa-user"></i>Donors</a></li>
             <li><a style="text-decoration:none;" href="/admin-donation"><i class="fas fa-hand-holding-medical"></i>Donations</a></li>
             <li><a style="text-decoration:none;" href="/admin-patient"><i class="fas fa-user-injured"></i>Hospitals</a></li>
             <li><a style="text-decoration:none;" href="/admin-request"><i class="fas fa-sync-alt"></i>Blood Requests</a></li>
             <li><a style="text-decoration:none;" href="/admin-request-history"><i class="fas fa-history"></i>Request History</a></li>
             <li><a style="text-decoration:none;" href="/admin-blood"><i class="fas fa-hand-holding-water"></i>Blood Stock</a></li>
+             <li><a style="text-decoration:none;" href="{% url 'lab_test' %}"><i class="fas fa-hand-holding-water"></i>Lab test</a></li>
            
         </ul> 
 

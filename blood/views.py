@@ -1,4 +1,6 @@
 from django.shortcuts import render, redirect, reverse, HttpResponse
+
+from donor.models import LabResult
 from . import forms, models
 from django.db.models import Sum, Q
 from django.contrib.auth.models import Group
@@ -19,6 +21,8 @@ from weasyprint import HTML
 import datetime
 import tempfile
 from blood.utilis import send_sms
+from camps.forms import LabResultForm
+
 
 def home_view(request):
     x = models.Stock.objects.all()
@@ -142,9 +146,52 @@ def admin_add_hospital(request):
 
 
 @login_required(login_url='adminlogin')
+def admin_blood_test_lab(request):
+    if request.method == 'POST':
+        try:
+            donalId = int(request.POST.get('getId'))
+            donors = dmodels.BloodDonate.objects.get(donor__id=donalId)
+            return redirect('blood_test_result', id=donors.id)
+        except:
+            messages.error(request, "please make sure that Id is number or Donal is available")
+            return render(request, 'blood/admin_blood_test_lab.html')
+    return render(request, 'blood/admin_blood_test_lab.html')
+
+
+@login_required(login_url='adminlogin')
+def blood_test_result(request, id):
+    donors = dmodels.BloodDonate.objects.get(donor__id=id)
+    is_checked = None
+    try:
+        lab_checked = LabResult.objects.get(donor=donors.donor)
+        is_checked = True
+    except:
+        is_checked = False
+
+    form = LabResultForm()
+    if request.method == 'POST':
+        form = LabResultForm(request.POST)
+        if form.is_valid():
+            instance = form.save(commit=False)
+            instance.donor = donors.donor
+            instance.save()
+            messages.success(request, "blood checked")
+            return redirect('blood_test_result', id=donors.id)
+    else:
+        form = LabResultForm()
+    context = {
+        'user_donors': donors,
+        'form': form,
+        'is_checked': is_checked
+    }
+    return render(request, 'blood/blood_test_result.html', context)
+
+
+@login_required(login_url='adminlogin')
 def admin_donor_view(request):
     donors = dmodels.Donor.objects.all()
     return render(request, 'blood/admin_donor.html', {'donors': donors})
+
 
 def admin_donor_view_report(request):
     response = HttpResponse(content_type='application/pdf')
@@ -164,6 +211,7 @@ def admin_donor_view_report(request):
         # output = open(output.name, 'rb')  # if we run this we got proble error related to the protection on c:/user/oscar
         response.write(output.read())
     return response
+
 
 @login_required(login_url='adminlogin')
 def update_donor_view(request, pk):
@@ -245,6 +293,15 @@ def admin_request_history_view(request):
     return render(request, 'blood/admin_request_history.html', {'requests': requests})
 
 @login_required(login_url='adminlogin')
+def lab_test(request):
+    lab_res = LabResult.objects.all()
+    context = {
+        'lab_res': lab_res
+    }
+    return render(request, 'blood/lab_test.html', context)
+
+
+@login_required(login_url='adminlogin')
 def export_pdf(request):
     response = HttpResponse(content_type='application/pdf')
     response['Content-Disposition'] = 'inline; attachment; filename=report' + str(datetime.datetime.now()) + '.pdf'
@@ -268,7 +325,9 @@ def export_pdf(request):
 @login_required(login_url='adminlogin')
 def admin_donation_view(request):
     donations = dmodels.BloodDonate.objects.all()
-    return render(request, 'blood/admin_donation.html', {'donations': donations})
+    lab_checked = dmodels.LabResult.objects.all()
+    return render(request, 'blood/admin_donation.html', {'donations': donations, 'lab_checked': lab_checked})
+
 
 @login_required(login_url='adminlogin')
 def blood_donation_detail_report(request):
@@ -299,7 +358,7 @@ def update_approve_status_view(request, pk):
     unit = req.unit
     stock = models.Stock.objects.get(bloodgroup=bloodgroup)
     if stock.unit > unit:
-        stock.unit = stock.unit-unit
+        stock.unit = stock.unit - unit
         stock.save()
         req.status = "Approved"
 
