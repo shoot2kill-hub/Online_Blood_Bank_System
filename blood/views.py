@@ -391,7 +391,7 @@ def approve_donation_view(request, pk):
 
     donation.status = 'Approved'
     donation.save()
-    message_donor = f"Hello {donation.donor} thanks for your help your blood approved"
+    message_donor = f"Hello {donation.donor} Thank you for donating your blood is approved"
     phone_donor = donation.donor.mobile
 
     try:
@@ -406,7 +406,7 @@ def reject_donation_view(request, pk):
     donation = dmodels.BloodDonate.objects.get(id=pk)
     donation.status = 'Rejected'
     donation.save()
-    message_donor = f"Hello {donation.donor} thanks for your help but your blood is rejected"
+    message_donor = f"Hello {donation.donor} Thank you for donating your blood is rejected"
     phone_donor = donation.donor.mobile
 
     try:
